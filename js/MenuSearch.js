@@ -147,7 +147,7 @@ new Vue ({
     openData: function (event) {
       alert('Hello');
       if (event) {
-        alert(event.target.tagName);
+        alert(event.target.innerHTML);
       }
     }
   },

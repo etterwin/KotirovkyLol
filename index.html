@@ -45,25 +45,35 @@
 
     </header>
 
-    <main class="main">
+    <div class="date__container"></div>
 
-        <div class="date__container"></div>
+    <main class="main">
 
         <div class="data__container" id="app-table">
 
             <table class="table" summary="Вывод данных для конктерной валюты каждые 5 минут в течение дня">
                 <thead class="table-header">
                     <tr>
-                        <td class="column-caption">Время</td>
-                        <td class="column-caption">Положение в рейтинге</td>
-                        <td class="column-caption">Rev24</td>
-                        <td class="column-caption">NetHash</td>
-                        <td class="column-caption">Стоимость валюты</td>
-                        <td class="column-caption">Капитализации</td>
-                        <td class="column-caption">Объем торгов</td>
+                        <th class="column-caption">Время</th>
+                        <th class="column-caption">Положение в рейтинге</th>
+                        <th class="column-caption">Rev24</th>
+                        <th class="column-caption">NetHash</th>
+                        <th class="column-caption">Стоимость валюты</th>
+                        <th class="column-caption">Капитализации</th>
+                        <th class="column-caption">Объем торгов</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <tr>
+                        <td class="column-data"></td>
+                        <td class="column-data"></td>
+                        <td class="column-data"></td>
+                        <td class="column-data"></td>
+                        <td class="column-data"></td>
+                        <td class="column-data"></td>
+                        <td class="column-data"></td>
+                    </tr>
+                </tbody>
             </table>
 
         </div>
@@ -74,7 +84,7 @@
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.10/vue.min.js"></script>
-    <script src="js/MenuSearch.js"></script>
+    <script src="dist/js/MenuSearch.js"></script>
     <!-- end JS -->
 
 </body>
