@@ -4,6 +4,18 @@ class Post {
   }
 }
 
+class Quotation{
+  constructor(time, rating, rev24, nethash, coast, capitalization, size) {
+    this.time = time;
+    this.rating = rating;
+    this.rev24 = rev24;
+    this.nethash = nethash;
+    this.coast = coast;
+    this.capitalization = capitalization;
+    this.size = size;
+  }
+}
+
 new Vue ({
   el: '#app-list',
   data: {
@@ -146,4 +158,16 @@ new Vue ({
       })
     }
   }
+});
+
+new Vue ({
+  el: '#app-table',
+  data: {
+    dataList: [
+        new Quotation(
+
+        )
+    ]
+  }
+
 });
