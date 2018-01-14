@@ -17,6 +17,10 @@ body {
   background: #e5e7ee;
 }
 
+.body-wrapper {
+  width: calc(100% - 220px);
+}
+
 /*Aside styles*/
 .aside {
   overflow: hidden;
@@ -67,6 +71,9 @@ body {
   }
   &::-webkit-scrollbar-thumb {
 	background-color: rgba(0,149,255,0.8);
+  }
+  @media screen and (max-height: 768px) {
+    height: 90vh;
   }
 }
 
@@ -132,5 +139,38 @@ body {
   background: white;
   border-radius: 5px;
   padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  text-align: center;
+}
+
+th {
+  width: 15%;
+  padding: 10px 0;
+  line-height: 1.42857143;
+  border-bottom: 1px solid rgba(67,75,85,0.4);
+  &:first-child {
+    width: 10%;
+  }
+}
+
+td {
+  width: 15%;
+  padding: 10px 0;
+  line-height: 1.42857143;
+  border-bottom: 1px solid rgba(67,75,85,0.2);
+  &:first-child {
+    width: 10%;
+  }
+}
+
+.column-caption {
+  font-weight: 700;
 }
 /*End main styles*/

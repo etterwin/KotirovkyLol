@@ -19,6 +19,7 @@ class Quotation{
 new Vue ({
   el: '#app-list',
   data: {
+      dataList: [],
     search: '',
     postList : [
       new Post(
@@ -143,6 +144,43 @@ new Vue ({
       )
 ]
   },
+    created() {
+        fetch('https://jsonplaceholder.typicode.com/posts/1/')
+            .then((response) => {
+                if(response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok');
+            })
+            .then((json) => {
+
+                /*
+                создать массив x in array, где массив - JSON из подJSON, х - key {
+                    внутри написать логику с добавлением, т.е. то, что ниже написано
+                    скорее всего, vue продублирует
+                }
+                */
+
+                this.dataList.push({
+                        title: json.title, //title и body - поля JSON
+                        body: json.body
+                        /*
+                        time = json.time,
+                        rating = json.rating,
+                        rev24 = json.rev24,
+                        nethash = json.nethash,
+                        coast = json.coast,
+                        capitalization = json.capitalization,
+                        size = json.size
+                        */
+                    }
+                );
+            })
+            .catch((error) => {
+                console.log(error);
+
+            });
+    },
   methods: {
     openData: function (event) {
       alert('Hello');
@@ -160,14 +198,4 @@ new Vue ({
   }
 });
 
-new Vue ({
-  el: '#app-table',
-  data: {
-    dataList: [
-        new Quotation(
 
-        )
-    ]
-  }
-
-});

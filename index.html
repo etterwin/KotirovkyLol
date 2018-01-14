@@ -20,39 +20,41 @@
 </head>
 <body>
 
-<aside class="aside" id="app-list">
+<div class="body-wrapper" id="app-list">
 
-    <form name="search" class="search-form">
-        <label for="searching" class="search-label">
-            <img src="assets/pictures/svg/search.svg" class="search-icon" />
-        </label>
-        <input type="search" v-model="search" name="search-value" id="searching" class="search-field" placeholder="Поиск..." />
-    </form>
+    <aside class="aside">
 
-    <ul class="list" >
-        <li class="item" v-for="post in filteredList" v-on:click="openData">
-            {{ post.title }}
-        </li>
-    </ul>
+        <form name="search" class="search-form">
+            <label for="searching" class="search-label">
+                <img src="assets/pictures/svg/search.svg" class="search-icon" />
+            </label>
+            <input type="search" v-model="search" name="search-value" id="searching" class="search-field" placeholder="Поиск..." />
+        </form>
 
-</aside>
+        <ul class="list" >
+            <li class="item" v-for="post in filteredList" v-on:click="openData">
+                {{ post.title }}
+            </li>
+        </ul>
 
-<div class="wrapper">
+    </aside>
 
-    <header class="header">
+    <div class="wrapper">
 
-        <h1 class="header-caption"> </h1>
+        <header class="header">
 
-    </header>
+            <h1 class="header-caption"> </h1>
 
-    <div class="date__container"></div>
+        </header>
 
-    <main class="main">
+        <div class="date__container"></div>
 
-        <div class="data__container" id="app-table">
+        <main class="main">
 
-            <table class="table" summary="Вывод данных для конктерной валюты каждые 5 минут в течение дня">
-                <thead class="table-header">
+            <div class="data__container">
+
+                <table class="table" summary="Вывод данных для конктерной валюты каждые 5 минут в течение дня">
+                    <thead class="table-header">
                     <tr>
                         <th class="column-caption">Время</th>
                         <th class="column-caption">Положение в рейтинге</th>
@@ -62,23 +64,25 @@
                         <th class="column-caption">Капитализации</th>
                         <th class="column-caption">Объем торгов</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody v-for='data in dataList'>
                     <tr>
-                        <td class="column-data"></td>
-                        <td class="column-data"></td>
-                        <td class="column-data"></td>
-                        <td class="column-data"></td>
-                        <td class="column-data"></td>
-                        <td class="column-data"></td>
-                        <td class="column-data"></td>
+                        <td class="column-data">{{ data.time }}</td>
+                        <td class="column-data">{{ data.rating }}</td>
+                        <td class="column-data">{{ data.rev24 }}</td>
+                        <td class="column-data">{{ data.nethash }}</td>
+                        <td class="column-data">{{ data.coast }}</td>
+                        <td class="column-data">{{ data.capitalization }}</td>
+                        <td class="column-data">{{ data.size }}</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-        </div>
+            </div>
 
-    </main>
+        </main>
+
+    </div>
 
 </div>
 
