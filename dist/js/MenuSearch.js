@@ -51,7 +51,7 @@ new Vue({
                         rev24down: obj.rev24down,
                         nethash: obj.nethash,
                         coast: obj.exrate,
-                        capitalization: obj.market_cap_up,
+                        capitalization: obj.market_cap_up.slice(0, 3) + ',' + obj.market_cap_up.slice(3, 6) + ',' + obj.market_cap_up.slice(6, 9),
                         size: obj.market_cap_down
                     });
                 }
