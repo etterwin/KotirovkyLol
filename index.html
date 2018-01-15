@@ -68,10 +68,12 @@
                     <tbody v-for='data in dataList'>
                     <tr>
                         <td class="column-data">{{ data.time }}</td>
-                        <td class="column-data">{{ data.rating }}</td>
-                        <td class="column-data">{{ data.rev24 }}</td>
+                        <td class="column-data"><!-- {{ data.rating }} --></td>
+                        <td class="column-data">
+                            {{ data.rev24up }}
+                            <br>{{ data.rev24down }}</td>
                         <td class="column-data">{{ data.nethash }}</td>
-                        <td class="column-data">{{ data.coast }}</td>
+                        <td class="column-data">{{ data.rating }}</td>
                         <td class="column-data">{{ data.capitalization }}</td>
                         <td class="column-data">{{ data.size }}</td>
                     </tr>

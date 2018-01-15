@@ -156,12 +156,13 @@ new Vue({
                 for (const obj of json) {
                     this.dataList.push({
                         time: obj.queue,
-                        rating: obj.exrate,
+                        //rating: obj. ,
                         rev24up: obj.rev24up,
                         rev24down: obj.rev24down,
                         nethash: obj.nethash,
-                        capitalization_up: obj.market_cap_up,
-                        capitalization_down: obj.market_cap_down
+                        coast: obj.exrate,
+                        capitalization: obj.market_cap_up,
+                        size: obj.market_cap_down
                     });
                 }
     })
