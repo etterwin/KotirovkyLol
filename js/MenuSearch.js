@@ -3,7 +3,7 @@ class Post {
         this.title = title;
     }
 }
-
+//видимо, он не так уж и нужен, да?
 // class Quotation {
 //     constructor(time, rating, rev24up, rew24down, nethash, capitalization_up, capitalization_down) {
 //         this.time = time;
