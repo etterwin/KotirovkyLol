@@ -155,7 +155,7 @@ new Vue({
             .then((json) => {
                 for (const obj of json) {
                     this.dataList.push({
-                        time: toString(obj.queue).slice(2,3)+':',
+                        time: obj.queue.slice(6,8)+':'+obj.queue.slice(8, 10),
                         //rating: obj. ,
                         rev24up: obj.rev24up,
                         rev24down: obj.rev24down,

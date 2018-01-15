@@ -7,7 +7,7 @@ var Post = function Post(title) {
 
     this.title = title;
 };
-
+//видимо, он не так уж и нужен, да?
 // class Quotation {
 //     constructor(time, rating, rev24up, rew24down, nethash, capitalization_up, capitalization_down) {
 //         this.time = time;
@@ -45,13 +45,14 @@ new Vue({
                     var obj = _step.value;
 
                     _this.dataList.push({
-                        time: obj.queue,
-                        rating: obj.exrate,
+                        time: obj.queue.slice(6, 8) + ':' + obj.queue.slice(8, 10),
+                        //rating: obj. ,
                         rev24up: obj.rev24up,
                         rev24down: obj.rev24down,
                         nethash: obj.nethash,
-                        capitalization_up: obj.market_cap_up,
-                        capitalization_down: obj.market_cap_down
+                        coast: obj.exrate,
+                        capitalization: obj.market_cap_up,
+                        size: obj.market_cap_down
                     });
                 }
             } catch (err) {
