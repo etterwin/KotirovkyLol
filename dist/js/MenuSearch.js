@@ -92,4 +92,6 @@ new Vue({
         }
     }
 });
+
+/*нужно реализовать вывод по конкретной монете и вывод за дату*/
 //# sourceMappingURL=MenuSearch.js.map
