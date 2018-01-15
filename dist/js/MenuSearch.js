@@ -8,17 +8,17 @@ var Post = function Post(title) {
     this.title = title;
 };
 
-var Quotation = function Quotation(time, rating, rev24up, rew24down, nethash, capitalization_up, capitalization_down) {
-    _classCallCheck(this, Quotation);
-
-    this.time = time;
-    this.rating = rating;
-    this.rev24up = rev24up;
-    this.rev24down = rev24down;
-    this.nethash = nethash;
-    this.capitalization_up = capitalization_up;
-    this.capitalization_down = capitalization_down;
-};
+// class Quotation {
+//     constructor(time, rating, rev24up, rew24down, nethash, capitalization_up, capitalization_down) {
+//         this.time = time;
+//         this.rating = rating;
+//         this.rev24up = rev24up;
+//         this.rev24down = rev24down;
+//         this.nethash = nethash;
+//         this.capitalization_up = capitalization_up;
+//         this.capitalization_down = capitalization_down;
+//     }
+// }
 
 new Vue({
     el: '#app-list',
