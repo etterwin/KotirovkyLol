@@ -144,7 +144,7 @@ new Vue({
             )
         ]
     },
-    /*created() {
+    created() {
         fetch('http://jutaxe.com/api.php')
             .then((response) => {
                 if (response.ok) {
@@ -170,14 +170,15 @@ new Vue({
             console.log(error);
 
         });
-    },*/
+    },
 
     methods: {
         openData: function (event) {
             if (event) {
                 axios.get('http://jutaxe.com/api.php', {
-                    name: event.target.textContent,
-
+                    params: {
+                        name: event.target.textContent,
+                    }
                 })
                     .then(function (response) {
                         console.log(response);
