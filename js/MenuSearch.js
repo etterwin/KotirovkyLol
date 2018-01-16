@@ -175,13 +175,16 @@ new Vue({
     methods: {
         openData: function (event) {
             if (event) {
-                alert(event.target.innerHTML);
+                alert('hello'+event.target.innerHTML);
                 axios.post('http://jutaxe.com/api.php', {
-                name: event.target.innerHTML
+                    name: event.target.innerHTML
                 })
                     .then(function (response) {
                         console.log(response);
                     })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             }
         }
     },
@@ -195,5 +198,7 @@ new Vue({
 });
 
 /*нужно реализовать вывод по конкретной монете и вывод за дату*/
+
+
 
 
