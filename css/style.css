@@ -99,6 +99,9 @@ body {
   .item:hover:after, .item:hover:before {
     opacity: 1; }
 
+.item-text {
+  color: white; }
+
 /*End aside styles*/
 /*Main styles*/
 .wrapper {

@@ -33,13 +33,14 @@
 
         <ul class="list" >
             <li class="item" v-for="post in filteredList" v-on:click="openData">
-                {{ post.title }}
+                <p class="item-text">{{ post.title }}</p>
             </li>
         </ul>
 
     </aside>
 
     <div class="wrapper">
+        <div id="test"></div>
 
         <div class="date__container">
 
@@ -91,6 +92,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.10/vue.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/MenuSearch.js"></script>
+    <!-- end JS -->
 
 </body>
 </html>

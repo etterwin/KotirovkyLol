@@ -175,9 +175,9 @@ new Vue({
     methods: {
         openData: function (event) {
             if (event) {
-                alert('hello'+event.target.innerHTML);
-                axios.post('http://jutaxe.com/api.php', {
-                    name: event.target.innerHTML
+                axios.get('http://jutaxe.com/api.php', {
+                    name: event.target.textContent,
+
                 })
                     .then(function (response) {
                         console.log(response);
