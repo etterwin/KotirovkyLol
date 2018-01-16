@@ -144,7 +144,7 @@ new Vue({
             )
         ]
     },
-    created() {
+    /*created() {
         fetch('http://jutaxe.com/api.php')
             .then((response) => {
                 if (response.ok) {
@@ -164,19 +164,35 @@ new Vue({
                         capitalization: obj.market_cap_up.slice(0, -6)+','+obj.market_cap_up.slice(-6, -3)+','+obj.market_cap_up.slice(-3),
                         size: obj.market_cap_down
                     });
-                }
+               }
     })
-    .
-        catch((error) => {
+    .catch((error) => {
             console.log(error);
 
         });
-    },
+    },*/
+
     methods: {
         openData: function (event) {
-            alert('Hello');
             if (event) {
                 alert(event.target.innerHTML);
+                axios.post('http://jutaxe.com/api.php', {
+                name: event.target.innerHTML
+                })
+                    .then((json) => {
+                        for (const obj of json) {
+                            this.dataList.push({
+                                time: obj.queue.slice(6,8)+':'+obj.queue.slice(8, 10),
+                                //rating: obj. ,
+                                rev24up: obj.rev24up,
+                                rev24down: obj.rev24down,
+                                nethash: obj.nethash,
+                                coast: obj.exrate,
+                                capitalization: obj.market_cap_up.slice(0, -6)+','+obj.market_cap_up.slice(-6, -3)+','+obj.market_cap_up.slice(-3),
+                                size: obj.market_cap_down
+                            });
+                        }
+                    })
             }
         }
     },
