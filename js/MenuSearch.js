@@ -3,6 +3,7 @@ class Post {
         this.title = title;
     }
 }
+
 //видимо, он не так уж и нужен, да?
 // class Quotation {
 //     constructor(time, rating, rev24up, rew24down, nethash, capitalization_up, capitalization_down) {
@@ -155,36 +156,39 @@ new Vue({
             .then((json) => {
                 for (const obj of json) {
                     this.dataList.push({
-                        time: obj.queue.slice(6,8)+':'+obj.queue.slice(8, 10),
+                        time: obj.queue.slice(6, 8) + ':' + obj.queue.slice(8, 10),
                         //rating: obj. ,
                         rev24up: obj.rev24up,
                         rev24down: obj.rev24down,
                         nethash: obj.nethash,
                         coast: obj.exrate,
-                        capitalization: obj.market_cap_up.slice(0, -6)+','+obj.market_cap_up.slice(-6, -3)+','+obj.market_cap_up.slice(-3),
+                        capitalization: obj.market_cap_up.slice(0, -6) + ',' + obj.market_cap_up.slice(-6, -3) + ',' + obj.market_cap_up.slice(-3),
                         size: obj.market_cap_down
                     });
-               }
-    })
-    .catch((error) => {
-            console.log(error);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
 
-        });
+            });
     },
 
     methods: {
         openData: function (event) {
             if (event) {
-                axios.get('http://jutaxe.com/api.php', {
-                    params: {
-                        name: event.target.textContent,
-                    }
-                })
-                    .then(function (response) {
-                        console.log(response);
+                fetch('http://jutaxe.com/api.php')
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('Network response was not ok');
                     })
-                    .catch(function (error) {
+                    .then((json) => {
+                        console.log(json);
+                    })
+                    .catch((error) => {
                         console.log(error);
+
                     });
             }
         }
