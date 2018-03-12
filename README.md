@@ -1,4 +1,4 @@
-## Quotations parser
+# Quotations parser
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-It's front-end only.
-The project was developed using php+vue, but at the last moment I was removed. I will continue to work with a friend using python+vue.
+В репозитории находится только фронтенд, использующий **Vue.js**, для которого существует бэк на **PHP**. В последний момент меня остранили от работы над проектом, однако я продолжу работу над ним для себя с применением **Python** и **Vue.js**.
